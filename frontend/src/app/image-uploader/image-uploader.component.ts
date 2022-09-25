@@ -10,7 +10,7 @@ export class ImageUploaderComponent implements OnInit {
 
   file: any;
   isuploaded: boolean = false;
-  imageUrl: any = "http://localhost:8000/images/spiderman_cwhBezt.jpg";
+  imageUrl: any = "";
   errorMessage: string = '';
   validExtensions: string[]= ['img', 'png', 'jpg', 'jpeg']
   uploadInProgress: boolean = false;

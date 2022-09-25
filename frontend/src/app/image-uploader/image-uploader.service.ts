@@ -9,7 +9,7 @@ export class ImageUploaderService {
     uploadImage(image:File) {
         const formData = new FormData;
         formData.append('image', image);
-        return this.http.post('http://localhost:8000/upload-image/', formData,
+        return this.http.post('https://image-uploadee.herokuapp.com/upload-image/', formData,
             {
                 reportProgress:true,
                 observe:"events"

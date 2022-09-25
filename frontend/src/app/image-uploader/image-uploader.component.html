@@ -1,0 +1,38 @@
+<div class="card-container">
+    <div class="upload-card" *ngIf="!isuploaded && !uploadInProgress">
+        <h2 class="head-2">Upload your image</h2>
+        <p>File should be Jpeg, Png...</p>
+        <div class="drag-n-drop">
+        <input type="file" (change)="uploadFile($event)" class="drag-n-drop-area">
+            <img src="assets/image.svg" alt="drag and drop your image here">
+            <p *ngIf="!file">Drag and Drop your Image here</p>
+            <p *ngIf="errorMessage" class="error-msg">{{errorMessage}}</p>
+        </div>
+        <p>or</p>
+        <button>
+            <input type="file" (change)="uploadFile($event)">
+            Choose a file
+        </button>
+    </div>
+    <ng-container *ngIf="uploadInProgress">
+        <div class="upload-in-progress">
+            <span class="head-2">Uploading...</span>
+            <div class="upload-progress-bar">
+                <div class="fill"></div>
+            </div>
+        </div>
+    </ng-container>
+    <div class="upload-success-card upload-card" *ngIf="isuploaded && !uploadInProgress">
+        <img class="upload-success-icon" src="assets/done.png" alt="Uploaded successfully">
+        <h2 *ngIf="!errorMessage" class="head-2">Uploaded Successfully!</h2>
+        <h2 *ngIf="errorMessage" class="head-2">{{errorMessage}}</h2>
+        <div class="drag-n-drop">
+            <img src={{imageUrl}}>
+        </div>
+        <div class="input-url-container">
+            <input class="image-url" id="test" type="url" value={{imageUrl}} readonly>
+            <button id="copy-btn" (click)="copyLink($event)">Copy Link</button>
+        </div>
+
+    </div>
+</div>

@@ -79,6 +79,8 @@ $ npm install
 # Run the app
 $ npm start
 ```
+## Update API in Frontend
+In image-uploader.service.ts update uploadImage() function with ```http://localhost:8000/upload-image```
 
 ## Contact
 

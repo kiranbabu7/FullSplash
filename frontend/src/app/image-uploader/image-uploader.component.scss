@@ -20,7 +20,7 @@ $background-color: #FFFFFF;
     .upload-card {
         background-color: $background-color;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
-        min-height: 65vh;
+        min-height: 29rem;
         min-width: 30vw;
         display: flex;
         flex-direction: column;
@@ -192,5 +192,19 @@ $background-color: #FFFFFF;
     }
     100%{
         transform: translateX(20rem);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .card-container {   
+        .upload-card{
+            min-width: 90%;
+        }
+        .drag-n-drop{
+            min-width: 90%;
+        }
+    }
+    .input-url-container{
+        min-width: 80%;
     }
 }
